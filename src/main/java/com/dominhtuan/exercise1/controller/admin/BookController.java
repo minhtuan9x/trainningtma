@@ -1,6 +1,7 @@
 package com.dominhtuan.exercise1.controller.admin;
 
 import com.dominhtuan.exercise1.service.BookService;
+import com.dominhtuan.exercise1.service.UserService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +17,15 @@ import java.util.Objects;
 public class BookController {
     @Autowired
     private BookService bookService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/list")
     public ModelAndView list(@RequestParam(required = false) String query) {
         ModelAndView modelAndView = new ModelAndView("admin/book/list");
         modelAndView.addObject("books", bookService.findAll(query));
         modelAndView.addObject("query", query);
+        modelAndView.addObject("user",userService.getUserDetail());
         return modelAndView;
     }
 

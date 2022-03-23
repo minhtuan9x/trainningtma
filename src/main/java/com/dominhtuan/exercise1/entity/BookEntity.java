@@ -28,4 +28,11 @@ public class BookEntity extends BaseEntity {
             joinColumns = @JoinColumn(name = "bookid", nullable = false),
             inverseJoinColumns = @JoinColumn(name = "categoryid", nullable = false))
     private List<CategoryEntity> categoryEntities = new ArrayList<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "bookstaff",
+    joinColumns = @JoinColumn(name = "bookid",nullable = false),
+    inverseJoinColumns = @JoinColumn(name = "staffid",nullable = false))
+    private List<UserEntity> userEntities = new ArrayList<>();
 }
+

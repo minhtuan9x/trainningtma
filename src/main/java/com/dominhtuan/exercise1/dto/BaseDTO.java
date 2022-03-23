@@ -7,4 +7,12 @@ import lombok.Setter;
 @Setter
 public class BaseDTO {
     private Long id;
+
+    public BaseDTO(){
+
+    }
+    public BaseDTO(Long id) {
+        this.id = id;
+    }
+
 }

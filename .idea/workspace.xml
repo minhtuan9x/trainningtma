@@ -5,7 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7df4d4-d380-40b0-962e-9abbefe2ae32" name="Changes" comment="stage 1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/constant/SystemConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/MyUserDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/response/StaffAssignmentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/response/UserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/RoleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/security/util/SecurityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/CustomUserDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/fragment/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/BookAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/BookAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/BookEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/book/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/book/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/book/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/book/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/api/admin/BookAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/api/admin/BookAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/controller/admin/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/controller/admin/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/dto/BaseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/dto/BaseDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/entity/BookEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/entity/BookEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/repository/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/repository/BookRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/book/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/book/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/book/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/book/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +55,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -92,6 +129,8 @@
       <workItem from="1647999618566" duration="1576000" />
       <workItem from="1648001248229" duration="7990000" />
       <workItem from="1648009986861" duration="1927000" />
+      <workItem from="1648032275995" duration="122000" />
+      <workItem from="1648032797640" duration="273000" />
     </task>
     <task id="LOCAL-00001" summary="stage 1">
       <created>1648010697097</created>

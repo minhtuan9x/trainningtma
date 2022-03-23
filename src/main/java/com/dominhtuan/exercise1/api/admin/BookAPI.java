@@ -1,6 +1,7 @@
 package com.dominhtuan.exercise1.api.admin;
 
 import com.dominhtuan.exercise1.dto.BookDTO;
+import com.dominhtuan.exercise1.dto.response.StaffAssignmentResponse;
 import com.dominhtuan.exercise1.service.BookService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,9 @@ public class BookAPI {
     public ResponseEntity<Void> delete(@RequestBody List<Long> ids) throws NotFoundException {
         bookService.delete(ids);
         return ResponseEntity.ok().build();
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<List<StaffAssignmentResponse>> getAllStaff(@PathVariable Long id) throws NotFoundException {
+        return ResponseEntity.ok(bookService.getAllStaffByBook(id));
     }
 }

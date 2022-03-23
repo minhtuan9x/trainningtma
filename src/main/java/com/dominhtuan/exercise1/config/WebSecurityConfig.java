@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //    }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {//truyen user detail vs passencoder
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
     }
 
@@ -57,6 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().defaultSuccessUrl("/admin/book/list").permitAll()
                 .and()
-                .logout().permitAll();
+                .logout().deleteCookies("JSESSIONID").permitAll()
+                .and()
+                .sessionManagement().maximumSessions(1);
     }
 }

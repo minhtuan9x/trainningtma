@@ -1,0 +1,10 @@
+insert into role(code,name) values('ADMIN','Quản trị hệ thống');
+insert into role(code,name) values('STAFF','người dùng');
+
+insert into users(username,password,fullname)
+values('admin','$2a$10$/RUbuT9KIqk6f8enaTQiLOXzhnUkiwEJRdtzdrMXXwU7dgnLKTCYG','admin');
+insert into users(username,password,fullname)
+values('nguyenvana','$2a$10$/RUbuT9KIqk6f8enaTQiLOXzhnUkiwEJRdtzdrMXXwU7dgnLKTCYG','nguyen van a');
+
+INSERT INTO user_role(userid,roleid) VALUES (1,1);
+INSERT INTO user_role(userid,roleid) VALUES (2,2);

@@ -100,6 +100,7 @@ public class BookServiceImpl implements BookService {
         if (userEntities.size() != staffIds.size())
             throw new NotFoundException("Not found user");
         bookEntity.setUserEntities(userEntities);
+        bookRepository.save(bookEntity);
     }
 
     @Override

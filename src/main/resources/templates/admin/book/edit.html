@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head >
     <meta charset="UTF-8">
     <title>Edit book</title>
@@ -40,8 +41,9 @@
                    th:value="${item2.getId()}" th:text="${item2.getName()}"
                    th:checked="${item2.getChecked().equals('checked')}">
         </div>
-
-        <button type="submit" class="btn btn-primary">Insert Book</button>
+        <span sec:authorize="hasRole('ROLE_ADMIN')">
+            <button type="submit" class="btn btn-primary">Insert Book</button>
+        </span>
     </form>
 </div>
 <script>

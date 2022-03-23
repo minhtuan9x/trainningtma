@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:insert="~{/admin/fragment/header.html::head}">
     <meta charset="UTF-8">
     <title>List Book</title>
@@ -9,8 +10,6 @@
 </head>
 <body>
 <div class="container">
-    Hello: <span th:text="${user.getFullName()}"></span>---
-    Roles: <span th:text="${user.getRoles()}"></span>
     <div class="col-md-12">
         <div class="row">
             <form method="get" action="/admin/book/list">
@@ -24,11 +23,10 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-5">
-                <div sec:authorize="hasRole('ADMIN')">
+                <span sec:authorize="hasRole('ROLE_ADMIN')">
                     <button class="btn btn-success" onclick="window.location.href='/admin/book/edit'">Insert</button>
-                </div>
-
-                <button class="btn btn-danger" onclick="del()">Delete</button>
+                    <button class="btn btn-danger" onclick="del()">Delete</button>
+                </span>
             </div>
         </div>
     </div>
@@ -66,11 +64,13 @@
                 <td th:utext="${item.getAuthor()}"></td>
                 <td th:utext="${item.getCategories()}"></td>
                 <td>
-                    <!--                    <button th:value="${item.getId()}" onclick="del(value)">Del</button>-->
                     <button id="btnEdit" th:value="${item.getId()}" onclick="directEdit(value)">Edit</button>
-                    <button id="btnModel" th:value="${item.getId()}" onclick="changeModal(value)" data-toggle="modal"
-                            data-target="#myModal">Assignment
-                    </button>
+                    <span sec:authorize="hasRole('ROLE_ADMIN')">
+                         <button id="btnModel" th:value="${item.getId()}" onclick="changeModal(value)"
+                                 data-toggle="modal"
+                                 data-target="#myModal">Assignment
+                         </button>
+                    </span>
                 </td>
             </tr>
             </tbody>
@@ -94,6 +94,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="assignment">Submit</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
 
@@ -132,9 +133,10 @@
     $("#selectAll").click(function () {
         $("input[name='checkBooks[]']").prop('checked', $(this).prop('checked'));
     });
-
+    let bookId =''
     function changeModal(value) {
         $("#modalBody").empty()
+        bookId = value
         $.ajax({
             url: "/api/book/" + value,
             method: "get",
@@ -155,6 +157,24 @@
             }
         })
     }
+    $("#assignment").click(()=>{
+        let values = [];
+        $.each($("input[name='checkStaffs[]']:checked"), function () {
+            values.push($(this).val());
+        });
+        $.ajax({
+            url: "/api/book/assign/"+bookId,
+            method: "post",
+            data: JSON.stringify(values),
+            contentType: "application/json",
+            success: () => {
+                window.location.href = "/admin/book/list"
+            },
+            error: () => {
+                alert("Error !!!")
+            }
+        })
+    })
 </script>
 </body>
 </html>

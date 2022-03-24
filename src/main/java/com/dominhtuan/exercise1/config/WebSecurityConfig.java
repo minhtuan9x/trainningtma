@@ -1,6 +1,7 @@
 package com.dominhtuan.exercise1.config;
 
 
+import com.dominhtuan.exercise1.security.CustomSuccessHandler;
 import com.dominhtuan.exercise1.service.impl.CustomUserDetailServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,13 +36,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return daoAuthenticationProvider;
     }
 
-//    @Bean
-//    public AuthenticationSuccessHandler authenticationSuccessHandler(){
-//        return new CustomSuccessHandler();
-//    }
+    @Bean
+    public AuthenticationSuccessHandler authenticationSuccessHandler(){
+        return new CustomSuccessHandler();
+    }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {//truyen user detail vs passencoder
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
     }
 
@@ -55,8 +56,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login","/resource/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().defaultSuccessUrl("/admin/book/list").permitAll()
+                .formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").loginProcessingUrl("/login_check")
+                .successHandler(authenticationSuccessHandler()).failureUrl("/login?incorrectAccount").permitAll()
                 .and()
-                .logout().permitAll();
+                .logout().deleteCookies("JSESSIONID").permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/access-denied")
+                .and()
+                .sessionManagement().maximumSessions(1).expiredUrl("/login?sessionTimeout");
     }
 }

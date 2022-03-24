@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <div th:fragment="head">
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -11,13 +12,30 @@
     <header>
         <div class="container">
 
-            <button class="btn btn-success" onclick="window.location.href='/admin/book/list'"> Book</button>
-            <button class="btn btn-success" onclick="window.location.href='/admin/user'"> User</button>
-            <button onclick="window.location.href='/logout'">Logout</button>
+
+            <span sec:authorize="isAuthenticated()">
+                <button class="btn btn-success" onclick="window.location.href='/admin/book/list'"> Book</button>
+                <span sec:authorize="hasRole('ADMIN')">
+                    <button class="btn btn-success"
+                         onclick="window.location.href='/admin/user/home'"> User Manager</button>
+                </span>
+                <span style="float: right">
+                     <button class="btn btn-info" sec:authentication="name"
+                             th:value="${#authentication.getName()}" onclick="profile(value)"></button>
+                        Roles: <span sec:authentication="principal.authorities"></span>
+                  <button onclick="window.location.href='/logout'">Logout</button>
+                </span>
+                <hr>
+            </span>
+
         </div>
 
-
     </header>
+    <script>
+        function profile(value) {
+            window.location.href = '/admin/user/profile/' + value;
+        }
+    </script>
 </div>
 
 </html>

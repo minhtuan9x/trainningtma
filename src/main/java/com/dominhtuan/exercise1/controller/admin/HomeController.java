@@ -13,4 +13,9 @@ public class HomeController {
         return new ModelAndView("redirect:/login");
     }
 
+    @GetMapping("/login")
+    public ModelAndView loginPage(){
+        ModelAndView modelAndView = new ModelAndView("login");
+        return modelAndView;
+    }
 }

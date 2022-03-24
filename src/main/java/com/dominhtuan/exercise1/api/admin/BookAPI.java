@@ -31,4 +31,9 @@ public class BookAPI {
     public ResponseEntity<List<StaffAssignmentResponse>> getAllStaff(@PathVariable Long id) throws NotFoundException {
         return ResponseEntity.ok(bookService.getAllStaffByBook(id));
     }
+    @PostMapping("/assignment/{id}")
+    public ResponseEntity<Void> assignment(@PathVariable Long id,@RequestBody List<Long> userIds) throws NotFoundException {
+        bookService.assignmentBook(id,userIds);
+        return ResponseEntity.ok().build();
+    }
 }

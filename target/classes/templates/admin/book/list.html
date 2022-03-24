@@ -9,8 +9,6 @@
 </head>
 <body>
 <div class="container">
-    Hello: <span th:text="${user.getFullName()}"></span>---
-    Roles: <span th:text="${user.getRoles()}"></span>
     <div class="col-md-12">
         <div class="row">
             <form method="get" action="/admin/book/list">
@@ -24,11 +22,11 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-5">
-                <div sec:authorize="hasRole('ADMIN')">
+                <span sec:authorize="hasRole('ADMIN')">
                     <button class="btn btn-success" onclick="window.location.href='/admin/book/edit'">Insert</button>
-                </div>
+                    <button class="btn btn-danger" onclick="del()">Delete</button>
+                </span>
 
-                <button class="btn btn-danger" onclick="del()">Delete</button>
             </div>
         </div>
     </div>
@@ -68,9 +66,13 @@
                 <td>
                     <!--                    <button th:value="${item.getId()}" onclick="del(value)">Del</button>-->
                     <button id="btnEdit" th:value="${item.getId()}" onclick="directEdit(value)">Edit</button>
-                    <button id="btnModel" th:value="${item.getId()}" onclick="changeModal(value)" data-toggle="modal"
-                            data-target="#myModal">Assignment
-                    </button>
+                    <span sec:authorize="hasRole('ADMIN')">
+                        <button id="btnModel" th:value="${item.getId()}" onclick="changeModal(value)"
+                                data-toggle="modal"
+                                data-target="#myModal">Assignment
+                        </button>
+                    </span>
+
                 </td>
             </tr>
             </tbody>
@@ -94,6 +96,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="assignment">Assignment</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
 
@@ -118,12 +121,12 @@
                 method: "delete",
                 data: JSON.stringify(values),
                 contentType: "application/json",
-                success: () => {
+                success: (res) => {
                     alert("Done !!!")
                     window.location.href = "/admin/book/list"
                 },
-                error: () => {
-                    alert("Error !!!")
+                error: (res) => {
+                    alert(res.responseJSON.message);
                 }
             })
         }
@@ -133,7 +136,10 @@
         $("input[name='checkBooks[]']").prop('checked', $(this).prop('checked'));
     });
 
+    let bookId = "";
+
     function changeModal(value) {
+        bookId = value
         $("#modalBody").empty()
         $.ajax({
             url: "/api/book/" + value,
@@ -150,11 +156,31 @@
                     $("#modalBody").append(str)
                 })
             },
-            error: () => {
-                alert("error")
+            error: (res) => {
+                alert(res.responseJSON.message);
             }
         })
     }
+
+    $("#assignment").click(e => {
+        let values = [];
+        $.each($("input[name='checkStaffs[]']:checked"), function () {
+            values.push($(this).val());
+        });
+        console.log(values)
+        $.ajax({
+            url: "/api/book/assignment/" + bookId,
+            method: "post",
+            data: JSON.stringify(values),
+            contentType: "application/json",
+            success: () => {
+                window.location.href = "/admin/book/list"
+            },
+            error: (res) => {
+                alert(res.responseJSON.message);
+            }
+        })
+    })
 </script>
 </body>
 </html>

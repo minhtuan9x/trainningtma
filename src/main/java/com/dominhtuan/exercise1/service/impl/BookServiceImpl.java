@@ -15,7 +15,7 @@ import com.dominhtuan.exercise1.repository.AuthorRepository;
 import com.dominhtuan.exercise1.repository.BookRepository;
 import com.dominhtuan.exercise1.repository.CategoryRepository;
 import com.dominhtuan.exercise1.repository.UserRepository;
-import com.dominhtuan.exercise1.security.util.SecurityUtil;
+import com.dominhtuan.exercise1.util.SecurityUtil;
 import com.dominhtuan.exercise1.service.BookService;
 import com.dominhtuan.exercise1.util.ValidateUtils;
 import javassist.NotFoundException;
@@ -100,6 +100,7 @@ public class BookServiceImpl implements BookService {
         if (userEntities.size() != staffIds.size())
             throw new NotFoundException("Not found user");
         bookEntity.setUserEntities(userEntities);
+        bookRepository.save(bookEntity);
     }
 
     @Override

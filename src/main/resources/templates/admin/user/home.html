@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<header th:insert="~{/admin/fragment/header.html::head}">
+
+</header>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success" onclick="window.location.href='/admin/user/edit'">Insert User</button>
+            <button class="btn btn-danger" id="del">Delete User</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="center">
+                        <label class="pos-rel">
+                            <input type="checkbox" id="selectAll" class="ace"/>
+                            <span class="lbl"></span>
+                        </label>
+                    </th>
+                    <th>ID</th>
+                    <th>USER NAME</th>
+                    <th>FULL NAME</th>
+                    <th>EMAIL</th>
+                    <th>ROLES</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item:${users}">
+                        <td class="center">
+                            <label class="pos-rel">
+                                <input type="checkbox" class="ace" name="checkUsers[]" th:value="${item.getId()}">
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td th:utext="${item.getId()}"></td>
+                        <td th:utext="${item.getUserName()}"></td>
+                        <td th:utext="${item.getFullName()}"></td>
+                        <td th:utext="${item.getEmail()}"></td>
+                        <td th:utext="${item.getRoles()}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $("#selectAll").click(function () {
+        $("input[name='checkUsers[]']").prop('checked', $(this).prop('checked'));
+    });
+    $("#del").click(e=>{
+        e.preventDefault()
+        if (confirm("Do you want delete ??")) {
+            let values = [];
+            $.each($("input[name='checkUsers[]']:checked"), function () {
+                values.push($(this).val());
+            });
+            console.log(values)
+            $.ajax({
+                url: "/api/user",
+                method: "delete",
+                data: JSON.stringify(values),
+                contentType: "application/json",
+                success: () => {
+                    alert("Done !!!")
+                    window.location.href = "/admin/user/home"
+                },
+                error: (res) => {
+                    alert(res.responseJSON.message);
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>

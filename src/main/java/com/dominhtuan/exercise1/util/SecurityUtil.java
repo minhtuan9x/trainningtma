@@ -1,4 +1,4 @@
-package com.dominhtuan.exercise1.security.util;
+package com.dominhtuan.exercise1.util;
 
 import com.dominhtuan.exercise1.dto.MyUserDetail;
 import org.springframework.security.core.GrantedAuthority;

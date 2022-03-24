@@ -18,4 +18,9 @@ public class HomeController {
         ModelAndView modelAndView = new ModelAndView("login");
         return modelAndView;
     }
+    @GetMapping("/access-denied")
+    public ModelAndView accessDenied(){
+        ModelAndView modelAndView = new ModelAndView("accessdenied");
+        return modelAndView;
+    }
 }

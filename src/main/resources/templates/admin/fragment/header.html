@@ -22,7 +22,7 @@
                 <span style="float: right">
                      <button class="btn btn-info" sec:authentication="name"
                              th:value="${#authentication.getName()}" onclick="profile(value)"></button>
-                        Roles: <span sec:authentication="principal.authorities"></span>
+                            <span sec:authentication="principal.authorities"></span>
                   <button onclick="window.location.href='/logout'">Logout</button>
                 </span>
                 <hr>

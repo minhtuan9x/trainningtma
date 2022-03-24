@@ -5,53 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7df4d4-d380-40b0-962e-9abbefe2ae32" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/UserAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/JpaAuditingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/web/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/converter/RoleConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/converter/UserConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/RoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/request/ChangePasswordRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/exception/ChangePasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/security/CustomSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/AuditorAwareServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/web/fragment/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/web/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/accessdenied.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/BookAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/BookAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/constant/SystemConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/constant/SystemConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controlleradvice/SystemControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controlleradvice/SystemControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/security/util/SecurityUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/util/SecurityUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/book/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/book/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/book/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/book/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/fragment/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/fragment/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/api/admin/BookAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/api/admin/BookAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/controlleradvice/SystemControllerAdvice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/controlleradvice/SystemControllerAdvice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/dto/BaseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/dto/BaseDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/entity/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/entity/BaseEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/book/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/book/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/book/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/book/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +104,7 @@
       <workItem from="1648032275995" duration="122000" />
       <workItem from="1648032797640" duration="471000" />
       <workItem from="1648085860113" duration="24546000" />
+      <workItem from="1648126394904" duration="2980000" />
     </task>
     <task id="LOCAL-00001" summary="stage 1">
       <created>1648010697097</created>
@@ -191,17 +151,6 @@
     <MESSAGE value="stage 1" />
     <MESSAGE value="init" />
     <option name="LAST_COMMIT_MESSAGE" value="init" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/BookAPI.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

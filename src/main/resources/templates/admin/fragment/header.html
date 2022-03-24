@@ -12,7 +12,6 @@
     <header>
         <div class="container">
 
-
             <span sec:authorize="isAuthenticated()">
                 <button class="btn btn-success" onclick="window.location.href='/admin/book/list'"> Book</button>
                 <span sec:authorize="hasRole('ADMIN')">

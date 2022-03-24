@@ -1,6 +1,12 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
+=======
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:insert="~{/admin/fragment/header.html::head}">
+>>>>>>> dcab3cd7fe10abadd9ce6bf7146221583a802444
     <meta charset="UTF-8">
     <title>List Book</title>
     <meta charset="utf-8">
@@ -29,7 +35,6 @@
                     <button class="btn btn-success" onclick="window.location.href='/admin/book/edit'">Insert</button>
                     <button class="btn btn-danger" onclick="del()">Delete</button>
                 </span>
-
             </div>
         </div>
     </div>
@@ -67,7 +72,6 @@
                 <td th:utext="${item.getAuthor()}"></td>
                 <td th:utext="${item.getCategories()}"></td>
                 <td>
-                    <!--                    <button th:value="${item.getId()}" onclick="del(value)">Del</button>-->
                     <button id="btnEdit" th:value="${item.getId()}" onclick="directEdit(value)">Edit</button>
                     <span sec:authorize="hasRole('ADMIN')">
                         <button id="btnModel" th:value="${item.getId()}" onclick="changeModal(value)"
@@ -99,7 +103,9 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
+
                     <button type="button" class="btn btn-success" id="assignment">Assignment</button>
+
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
 
@@ -140,10 +146,10 @@
     });
 
     let bookId = "";
-
     function changeModal(value) {
         bookId = value
         $("#modalBody").empty()
+        bookId = value
         $.ajax({
             url: "/api/book/" + value,
             method: "get",

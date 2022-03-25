@@ -19,6 +19,9 @@ import com.dominhtuan.exercise1.util.SecurityUtil;
 import com.dominhtuan.exercise1.service.BookService;
 import com.dominhtuan.exercise1.util.ValidateUtils;
 import javassist.NotFoundException;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,6 +43,8 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private UserRepository userRepository;
 
+    Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
+
     public BookServiceImpl(BookRepository bookRepository, BookConverter bookConverter, AuthorRepository authorRepository, CategoryRepository categoryRepository, AuthorConverter authorConverter, CategoryConverter categoryConverter) {
         this.bookRepository = bookRepository;
         this.bookConverter = bookConverter;
@@ -53,11 +58,15 @@ public class BookServiceImpl implements BookService {
     public List<BookResponse> findAll(String query) {
         List<BookResponse> bookResponses = new ArrayList<>();
         if (SecurityUtil.getAuthorities().contains(SystemConstant.STAFF_ROLE)) {
+            logger.info("Get all book by role STAFF");
             bookResponses = ValidateUtils.isValid(query) ? bookRepository.findByAuthorEntity_NameContainingIgnoreCaseOrNameContainingIgnoreCaseAndUserEntities_UserName(query, query, SecurityUtil.getPrincipal().getUsername()).stream().map(item -> bookConverter.toBookResponse(item)).collect(Collectors.toList())
                     : bookRepository.findAllByUserEntities_UserName(SecurityUtil.getPrincipal().getUsername()).stream().map(item -> bookConverter.toBookResponse(item)).collect(Collectors.toList());
-        } else
+        } else{
+            logger.info("Get all book by role ADMIN");
             bookResponses = ValidateUtils.isValid(query) ? bookRepository.findByAuthorEntity_NameContainingIgnoreCaseOrNameContainingIgnoreCase(query, query).stream().map(item -> bookConverter.toBookResponse(item)).collect(Collectors.toList())
                     : bookRepository.findAll().stream().map(item -> bookConverter.toBookResponse(item)).collect(Collectors.toList());
+        }
+
         return bookResponses;
     }
 
@@ -68,6 +77,7 @@ public class BookServiceImpl implements BookService {
             bookRepository.save(bookConverter.toBookEntity(bookDTO));
         } catch (Exception e) {
             e.printStackTrace();
+            logger.error(e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -76,7 +86,10 @@ public class BookServiceImpl implements BookService {
     public BookEditResponse findOne(Long id) throws NotFoundException {
         BookEditResponse bookEditResponse;
         if (Objects.nonNull(id))
-            bookEditResponse = bookConverter.toBookEditResponse(bookRepository.findById(id).orElseThrow(() -> new NotFoundException("Not found book")));
+            bookEditResponse = bookConverter.toBookEditResponse(bookRepository.findById(id).orElseThrow(() ->{
+                logger.warn("Not found book with id = "+id);
+                return new NotFoundException("Not found book");
+            } ));
         else {
             bookEditResponse = new BookEditResponse();
             bookEditResponse.setAuthorResponses(authorRepository.findAll().stream().map(authorConverter::toAuthorResponse).collect(Collectors.toList()));
@@ -88,8 +101,11 @@ public class BookServiceImpl implements BookService {
     @Override
     @Transactional
     public void delete(List<Long> ids) throws NotFoundException {
-        if (bookRepository.findAllByIdIn(ids).size() != ids.size())
+        if (bookRepository.findAllByIdIn(ids).size() != ids.size()){
+            logger.warn("Not found book when delete with id = "+ids);
             throw new NotFoundException("Not found Book");
+        }
+
         bookRepository.deleteByIdIn(ids);
     }
 

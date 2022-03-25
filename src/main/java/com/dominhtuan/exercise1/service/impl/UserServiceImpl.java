@@ -12,6 +12,7 @@ import com.dominhtuan.exercise1.repository.UserRepository;
 import com.dominhtuan.exercise1.util.SecurityUtil;
 import com.dominhtuan.exercise1.service.UserService;
 import javassist.NotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
@@ -77,8 +79,14 @@ public class UserServiceImpl implements UserService {
             userEntity.setPassWord(passwordEncoder.encode(changePasswordRequest.getNewPassword()));
             userRepository.save(userEntity);
         }
-        else
-            throw new ChangePasswordException("Error when change password");
+        else{
+            log.warn("Change pass word fail");
+            log.info("Old pass: "+changePasswordRequest.getOldPassword());
+            log.info("New pass: "+changePasswordRequest.getNewPassword());
+            log.info("Confirm New pass: "+changePasswordRequest.getConfirmNewPassword());
+            throw new ChangePasswordException("Old Pass of confirm pass wrong");
+        }
+
     }
 
     @Override

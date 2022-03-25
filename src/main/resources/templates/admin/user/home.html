@@ -32,6 +32,7 @@
                     <th>FULL NAME</th>
                     <th>EMAIL</th>
                     <th>ROLES</th>
+                    <th>ACTION</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,7 @@
                         <td th:utext="${item.getFullName()}"></td>
                         <td th:utext="${item.getEmail()}"></td>
                         <td th:utext="${item.getRoles()}"></td>
+                        <td><button th:value="${#authentication.getName()}" onclick="resetPass(value)">Reset Password</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -80,6 +82,21 @@
             })
         }
     })
+    function resetPass(value){
+        if(confirm("Do you want reset password ???")){
+            $.ajax({
+                url: "/api/user/password/reset/"+value,
+                method: "put",
+                success: () => {
+                    alert("Done !!!")
+                    window.location.href = "/admin/user/home"
+                },
+                error: (res) => {
+                    alert(res.responseJSON.message);
+                }
+            })
+        }
+    }
 </script>
 </body>
 </html>

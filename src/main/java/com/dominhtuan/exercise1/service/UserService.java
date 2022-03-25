@@ -16,4 +16,5 @@ public interface UserService {
     UserDTO findOne(String userName) throws NotFoundException;
     void updateProfile(UserDTO userDTO) throws NotFoundException;
     void changePassword(ChangePasswordRequest changePasswordRequest);
+    void resetPassword(String userName) throws NotFoundException;
 }

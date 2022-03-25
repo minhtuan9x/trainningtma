@@ -36,4 +36,9 @@ public class UserAPI {
         userService.changePassword(changePasswordRequest);
         return ResponseEntity.ok().build();
     }
+    @PutMapping("password/reset/{username}")
+    public ResponseEntity<Void> resetPassword(@PathVariable String username) throws NotFoundException {
+        userService.resetPassword(username);
+        return ResponseEntity.ok().build();
+    }
 }

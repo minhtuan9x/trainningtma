@@ -1,5 +1,6 @@
 package com.dominhtuan.exercise1.service.impl;
 
+import com.dominhtuan.exercise1.constant.SystemConstant;
 import com.dominhtuan.exercise1.converter.UserConverter;
 import com.dominhtuan.exercise1.dto.MyUserDetail;
 import com.dominhtuan.exercise1.dto.UserDTO;
@@ -78,5 +79,13 @@ public class UserServiceImpl implements UserService {
         }
         else
             throw new ChangePasswordException("Error when change password");
+    }
+
+    @Override
+    @Transactional
+    public void resetPassword(String userName) throws NotFoundException {
+        UserEntity userEntity = Optional.ofNullable(userRepository.findByUserName(userName)).orElseThrow(()->new NotFoundException("Not found user"));
+        userEntity.setPassWord(passwordEncoder.encode(SystemConstant.DEFAULT_PASSWORD));
+        userRepository.save(userEntity);
     }
 }

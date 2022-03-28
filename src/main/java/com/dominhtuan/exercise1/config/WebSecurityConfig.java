@@ -55,15 +55,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.DELETE,"/api/book").hasRole("ADMIN")
                 .antMatchers("/api/user/test").hasRole("ADMIN")
                 .antMatchers("/login","/resource/**").permitAll()
-                .anyRequest().authenticated()
+//                .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").loginProcessingUrl("/login_check")
                 .successHandler(authenticationSuccessHandler()).failureUrl("/login?incorrectAccount").permitAll()
                 .and()
                 .logout().deleteCookies("JSESSIONID").permitAll()
                 .and()
+                .rememberMe().rememberMeParameter("remember").key("uniqueAndSecret").tokenValiditySeconds(3600)
+                .and()
                 .exceptionHandling().accessDeniedPage("/access-denied")
                 .and()
-                .sessionManagement().maximumSessions(1).expiredUrl("/login?sessionTimeout");
+                .sessionManagement().maximumSessions(1).expiredUrl("/login?sessionTimeout")
+                ;
     }
 }

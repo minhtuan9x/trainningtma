@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7df4d4-d380-40b0-962e-9abbefe2ae32" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/exercise1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/Exercise1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/Exercise1Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/UserAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/AuditorAwareServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/AuditorAwareServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/Exercise1Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/Exercise1Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/util/ValidateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/util/ValidateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/util/ValidateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/util/ValidateUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -155,7 +150,7 @@
       <workItem from="1648203269129" duration="2366000" />
       <workItem from="1648431129031" duration="817000" />
       <workItem from="1648432505170" duration="276000" />
-      <workItem from="1648436944700" duration="3893000" />
+      <workItem from="1648436944700" duration="8112000" />
     </task>
     <task id="LOCAL-00001" summary="stage 1">
       <created>1648010697097</created>

@@ -3,6 +3,8 @@ package com.dominhtuan.exercise1.api.admin;
 import com.dominhtuan.exercise1.dto.UserDTO;
 import com.dominhtuan.exercise1.dto.request.ChangePasswordRequest;
 import com.dominhtuan.exercise1.service.UserService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +19,11 @@ public class UserAPI {
     @Autowired
     private UserService userService;
     @PostMapping
-    public ResponseEntity<Void> insert(@RequestBody UserDTO userDTO){
+    @ApiOperation(value = "insert new account",
+    notes = "username require do not repeat",
+    response = Void.class)
+    public ResponseEntity<Void> insert(@ApiParam(value = "username khong dc giong nhau",required = true)
+                                           @RequestBody UserDTO userDTO){
         userService.insertUser(userDTO);
         return ResponseEntity.ok().build();
     }

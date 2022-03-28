@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7df4d4-d380-40b0-962e-9abbefe2ae32" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/CategoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/CategoryServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/CategoryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/service/impl/CategoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/exercise1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/Exercise1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/Exercise1Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/api/admin/UserAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/BaseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/AuditorAwareServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/service/impl/AuditorAwareServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/Exercise1Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/Exercise1Application.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -83,8 +84,41 @@
       <recent name="D:\dmtuan2Data\exercise1\src\main\resources\templates" />
       <recent name="D:\dmtuan2Data\exercise1\src\main\resources\templates\" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.dominhtuan.exercise1" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Exercise1Application">
+    <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exercise1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.BookServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exercise1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dominhtuan.exercise1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dominhtuan.exercise1" />
+      <option name="MAIN_CLASS_NAME" value="com.dominhtuan.exercise1.DemoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Exercise1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="exercise1" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.dominhtuan.exercise1.Exercise1Application" />
@@ -92,6 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DemoTest" />
+        <item itemvalue="JUnit.BookServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,6 +151,11 @@
       <workItem from="1648085860113" duration="24546000" />
       <workItem from="1648126394904" duration="2980000" />
       <workItem from="1648188527459" duration="2815000" />
+      <workItem from="1648199556602" duration="168000" />
+      <workItem from="1648203269129" duration="2366000" />
+      <workItem from="1648431129031" duration="817000" />
+      <workItem from="1648432505170" duration="276000" />
+      <workItem from="1648436944700" duration="3893000" />
     </task>
     <task id="LOCAL-00001" summary="stage 1">
       <created>1648010697097</created>

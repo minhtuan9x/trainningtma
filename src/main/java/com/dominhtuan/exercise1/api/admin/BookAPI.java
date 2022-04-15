@@ -3,6 +3,8 @@ package com.dominhtuan.exercise1.api.admin;
 import com.dominhtuan.exercise1.dto.BookDTO;
 import com.dominhtuan.exercise1.dto.response.StaffAssignmentResponse;
 import com.dominhtuan.exercise1.service.BookService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,9 @@ public class BookAPI {
         bookService.delete(ids);
         return ResponseEntity.ok().build();
     }
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class, example = "Bearer access_token")
+    )
     @GetMapping("/{id}")
     public ResponseEntity<List<StaffAssignmentResponse>> getAllStaff(@PathVariable Long id) throws NotFoundException {
         return ResponseEntity.ok(bookService.getAllStaffByBook(id));

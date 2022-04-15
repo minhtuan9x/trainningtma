@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head >
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
     <meta charset="UTF-8">
     <title>Edit book</title>
     <meta charset="utf-8">
@@ -60,17 +61,17 @@
             })
             data["categoryIds"] = listCategory;
             console.log(data)
-            if(confirm("Do you want insert ????")){
+            if (confirm("Do you want insert ????")) {
                 $.ajax({
-                    url:"/api/book",
-                    method:"post",
-                    data:JSON.stringify(data),
-                    contentType:"application/json",
-                    success:(res)=>{
+                    url: "/api/book",
+                    method: "post",
+                    data: JSON.stringify(data),
+                    contentType: "application/json",
+                    success: (res) => {
                         alert("Done !!!")
-                        window.location.href="/admin/book/list"
+                        window.location.href = "/admin/book/list"
                     },
-                    error:(res)=>{
+                    error: (res) => {
                         alert(res.responseJSON.message);
                     }
                 })

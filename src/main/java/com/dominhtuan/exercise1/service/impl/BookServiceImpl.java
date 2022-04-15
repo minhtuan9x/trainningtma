@@ -19,6 +19,7 @@ import com.dominhtuan.exercise1.util.SecurityUtil;
 import com.dominhtuan.exercise1.service.BookService;
 import com.dominhtuan.exercise1.util.ValidateUtils;
 import javassist.NotFoundException;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,27 +33,20 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
+@Transactional
 public class BookServiceImpl implements BookService {
 
-    private BookRepository bookRepository;
-    private BookConverter bookConverter;
-    private AuthorRepository authorRepository;
-    private CategoryRepository categoryRepository;
-    private AuthorConverter authorConverter;
-    private CategoryConverter categoryConverter;
-    @Autowired
-    private UserRepository userRepository;
+    private final BookConverter bookConverter;
+    private final BookRepository bookRepository;
+    private final AuthorRepository authorRepository;
+    private final CategoryRepository categoryRepository;
+    private final AuthorConverter authorConverter;
+    private final CategoryConverter categoryConverter;
+    private final UserRepository userRepository;
 
     Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
 
-    public BookServiceImpl(BookRepository bookRepository, BookConverter bookConverter, AuthorRepository authorRepository, CategoryRepository categoryRepository, AuthorConverter authorConverter, CategoryConverter categoryConverter) {
-        this.bookRepository = bookRepository;
-        this.bookConverter = bookConverter;
-        this.authorRepository = authorRepository;
-        this.categoryRepository = categoryRepository;
-        this.authorConverter = authorConverter;
-        this.categoryConverter = categoryConverter;
-    }
 
     @Override
     public List<BookResponse> findAll(String query) {
@@ -71,7 +65,6 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Transactional
     public void save(BookDTO bookDTO) {
         try {
             bookRepository.save(bookConverter.toBookEntity(bookDTO));
@@ -99,7 +92,6 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Transactional
     public void delete(List<Long> ids) throws NotFoundException {
         if (bookRepository.findAllByIdIn(ids).size() != ids.size()){
             logger.warn("Not found book when delete with id = "+ids);

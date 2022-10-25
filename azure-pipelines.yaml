@@ -2,7 +2,7 @@ trigger:
   - stage3
 
 pool: #platform to build app
-  vmImage: "ubuntu-latest"
+  vmImage: "test-CICD-tuan"
 stages:
   - stage: Test
     displayName: "Test tuan 123"

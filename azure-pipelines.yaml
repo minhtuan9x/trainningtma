@@ -1,11 +1,12 @@
 trigger:
-  - stage3
-
-pool: #platform to build app
-  vmImage: "ubuntu-latest"
-jobs:
-  - job: work
-    displayName: Alert
-    steps:
-      - script: echo Hello Boy
-        displayName: Run one line script
+  - main
+stages:
+  - stage: Test
+    displayName: "Test tuan 123"
+    pool: "ubuntu-latest"
+    jobs:
+      - job: work
+        displayName: Alert
+        steps:
+          - script: echo Hello Boy
+            displayName: Run one line script

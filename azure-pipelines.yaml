@@ -1,15 +1,14 @@
-jobs:
-  # Track deployments on the environment.
-  - deployment: DeployWeb
-    displayName: deploy Web App
-    pool:
-      vmImage: 'ubuntu-latest'
-    # Creates an environment if it doesn't exist.
-    environment: 'smarthotel-dev'
-    strategy:
-      # Default deployment strategy, more coming...
-      runOnce:
-        deploy:
-          steps:
-            - checkout: self
-            - script: echo my first deployment
+trigger:
+  - stage3
+
+pool: #platform to build app
+  vmImage: "ubuntu-latest"
+stages:
+  - stage: Test
+    displayName: "Test tuan 123"
+    jobs:
+      - job: work
+        displayName: Alert
+        steps:
+          - script: echo Hello Boy
+            displayName: Run one line script

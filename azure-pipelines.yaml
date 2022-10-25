@@ -2,13 +2,10 @@ trigger:
   - stage3
 
 pool: #platform to build app
-  vmImage: "test-CICD-tuan"
-stages:
-  - stage: Test
-    displayName: "Test tuan 123"
-    jobs:
-      - job: work
-        displayName: Alert
-        steps:
-          - script: echo Hello Boy
-            displayName: Run one line script
+  vmImage: "ubuntu-latest"
+jobs:
+  - job: work
+    displayName: Alert
+    steps:
+      - script: echo Hello Boy
+        displayName: Run one line script

@@ -3,7 +3,7 @@ trigger:
 stages:
   - stage: Test
     displayName: "Test tuan 123"
-    pool: "ubuntu-latest"
+    pool: "Default"
     jobs:
       - job: work
         displayName: Alert

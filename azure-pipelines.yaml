@@ -3,7 +3,7 @@ trigger:
 stages:
   - stage: Test
     displayName: "Test tuan 123"
-    pool: "Default"
+    pool: "tuan-do"
     jobs:
       - job: work
         displayName: Alert

@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7df4d4-d380-40b0-962e-9abbefe2ae32" name="Changes" comment="init">
+    <list default="true" id="7f7df4d4-d380-40b0-962e-9abbefe2ae32" name="Changes" comment="azure pipelines">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/controller/admin/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/util/ValidateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dominhtuan/exercise1/util/ValidateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/util/ValidateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dominhtuan/exercise1/util/ValidateUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/exercise1.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +27,24 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="stage4" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,6 +59,9 @@
     </option>
   </component>
   <component name="ProjectId" id="26jRnIl9CI347FnMGFybL0iTkqG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,7 +84,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -151,6 +168,7 @@
       <workItem from="1648431129031" duration="817000" />
       <workItem from="1648432505170" duration="276000" />
       <workItem from="1648436944700" duration="8112000" />
+      <workItem from="1666664232427" duration="5081000" />
     </task>
     <task id="LOCAL-00001" summary="stage 1">
       <created>1648010697097</created>
@@ -173,7 +191,70 @@
       <option name="project" value="LOCAL" />
       <updated>1648033264513</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="azure pipelines">
+      <created>1665990401423</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665990401423</updated>
+    </task>
+    <task id="LOCAL-00005" summary="azure pipelines">
+      <created>1666665590015</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666665590015</updated>
+    </task>
+    <task id="LOCAL-00006" summary="azure pipelines">
+      <created>1666666330444</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666666330444</updated>
+    </task>
+    <task id="LOCAL-00007" summary="azure pipelines">
+      <created>1666666442177</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666666442177</updated>
+    </task>
+    <task id="LOCAL-00008" summary="azure pipelines">
+      <created>1666666523127</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666666523127</updated>
+    </task>
+    <task id="LOCAL-00009" summary="azure pipelines">
+      <created>1666666932849</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666666932849</updated>
+    </task>
+    <task id="LOCAL-00010" summary="azure pipelines">
+      <created>1666667291879</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666667291879</updated>
+    </task>
+    <task id="LOCAL-00011" summary="azure pipelines">
+      <created>1666669603721</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666669603721</updated>
+    </task>
+    <task id="LOCAL-00012" summary="azure pipelines">
+      <created>1666669695658</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666669695658</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +277,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stage 1" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="azure pipelines" />
+    <option name="LAST_COMMIT_MESSAGE" value="azure pipelines" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
